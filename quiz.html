@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber-Grooming Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        h2 {
+            color: #ff4d4d;
+        }
+        .question {
+            font-size: 18px;
+            margin: 15px 0;
+        }
+        .answers button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .correct {
+            background-color: #4CAF50 !important;
+            color: white;
+        }
+        .wrong {
+            background-color: #ff4d4d !important;
+            color: white;
+        }
+        .next-btn {
+            display: none;
+            margin-top: 10px;
+            background: #007BFF;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .result {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>🛡 Cyber-Grooming Quiz 🛡</h2>
+
+        <div id="quiz">
+            <p class="question" id="question-text">Frage lädt...</p>
+            <div class="answers" id="answers">
+                <!-- Antwortmöglichkeiten kommen hier rein -->
+            </div>
+            <button class="next-btn" id="next-btn" onclick="nextQuestion()">➡ Weiter</button>
+        </div>
+
+        <p class="result" id="result"></p>
+    </div>
+
+    <script>
+        // Quiz-Daten
+        const quizData = [
+            {
+                question: "Was solltest du tun, wenn dich jemand nach privaten Infos fragt?",
+                answers: [
+                    { text: "Einfach sagen, wenn er nett ist.", correct: false },
+                    { text: "Lügen, damit ich ihn teste.", correct: false },
+                    { text: "Keine Infos geben und misstrauisch bleiben.", correct: true }
+                ]
+            },
+            {
+                question: "Woran erkennst du Cyber-Grooming?",
+                answers: [
+                    { text: "Wenn jemand dich zu sexuellen Themen ausfragt.", correct: true },
+                    { text: "Wenn jemand lustige Emojis sendet.", correct: false },
+                    { text: "Wenn jemand mit mir über Sport redet.", correct: false }
+                ]
+            },
+            {
+                question: "Was machst du, wenn jemand intime Bilder fordert?",
+                answers: [
+                    { text: "Blockieren und Beweise sichern!", correct: true },
+                    { text: "Fragen, ob er ein netter Mensch ist.", correct: false },
+                    { text: "Ein Bild schicken, damit er mich in Ruhe lässt.", correct: false }
+                ]
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+
+        function loadQuestion() {
+            const questionData = quizData[currentQuestionIndex];
+            document.getElementById("question-text").textContent = questionData.question;
+            
+            const answersContainer = document.getElementById("answers");
+            answersContainer.innerHTML = "";
+
+            questionData.answers.forEach((answer, index) => {
+                const button = document.createElement("button");
+                button.textContent = answer.text;
+                button.onclick = () => checkAnswer(button, answer.correct);
+                button.setAttribute("data-correct", answer.correct);
+                answersContainer.appendChild(button);
+            });
+
+            document.getElementById("next-btn").style.display = "none";
+        }
+
+        function checkAnswer(button, isCorrect) {
+            const buttons = document.querySelectorAll(".answers button");
+            buttons.forEach(btn => btn.disabled = true); // Deaktiviert alle Buttons
+
+            if (isCorrect) {
+                button.classList.add("correct");
+                score++;
+            } else {
+                button.classList.add("wrong");
+            }
+
+            document.getElementById("next-btn").style.display = "block"; // Zeigt Weiter-Button
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < quizData.length) {
+                loadQuestion();
+            } else {
+                showResult();
+            }
+        }
+
+        function showResult() {
+            document.getElementById("quiz").style.display = "none";
+            const resultText = `Du hast ${score} von ${quizData.length} Fragen richtig!`;
+            document.getElementById("result").textContent = resultText;
+        }
+
+        // Erste Frage laden
+        loadQuestion();
+    </script>
+
+</body>
+</html>
