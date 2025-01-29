@@ -17,32 +17,78 @@
             background-color: #ff4c4c;
             color: #fff;
             text-align: center;
-            padding: 1rem 0;
+            padding: 2rem 0;
+            margin-bottom: 1.5rem;
         }
         header h1 {
             margin: 0;
-            font-size: 2.5rem;
+            font-size: 3rem;
         }
         .container {
             max-width: 800px;
-            margin: 2rem auto;
-            padding: 1rem;
+            margin: 0 auto;
+            padding: 1.5rem;
             background: #fff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
         }
         .container h2 {
-            font-size: 1.8rem;
+            font-size: 2rem;
             color: #ff4c4c;
+            text-align: center;
+            margin-bottom: 2rem;
         }
-        .container p {
-            margin: 1rem 0;
+        .accordion {
+            margin-bottom: 1rem;
         }
-        .tips {
-            margin-top: 2rem;
+        .accordion button {
+            width: 100%;
+            background: #ffecec;
+            color: #333;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 1rem;
+            border: none;
+            text-align: left;
+            outline: none;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            border-radius: 5px;
         }
-        .tips li {
-            margin: 1rem 0;
+        .accordion button:hover {
+            background: #ffb3b3;
+        }
+        .accordion button:after {
+            content: '➕'; /* Plus-Symbol */
+            float: right;
+        }
+        .accordion button.active:after {
+            content: '➖'; /* Minus-Symbol */
+        }
+        .panel {
+            display: none;
+            padding: 1rem;
+            background: #fff5f5;
+            overflow: hidden;
+            border-left: 5px solid #ff4c4c;
+            margin-top: 1rem;
+            border-radius: 5px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 20px;
+            transition: transform 0.2s ease-in-out;
+        }
+        .button:hover {
+            background: #0056b3;
+            transform: scale(1.1);
         }
         footer {
             text-align: center;
@@ -58,16 +104,71 @@
     </header>
     <div class="container">
         <h2>Schütze dich mit diesen Tipps</h2>
-        <ul class="tips">
-            <li><strong>1. SAGE NEIN, WENN DU ETWAS NICHT MÖCHTEST:</strong> Du fühlst dich unwohl oder möchtest eine Frage nicht beantworten? Dann sag NEIN! Nur du bestimmst deine Grenzen. Brich unangenehme Gespräche ab und blockiere aufdringliche Kontakte.</li>
-            <li><strong>2. VERSCHICKE KEINE FOTOS UND VIDEOS:</strong> Sei sparsam mit deinen Bildern und Videos und überprüfe deine Privatsphäre-Einstellungen. Teile keine Medien mit Fremden und überlege dir genau, was von dir im Internet sichtbar sein soll.</li>
-            <li><strong>3. SEI SKEPTISCH BEI FREMDEN KONTAKTEN:</strong> Dein Chatpartner hat die gleichen Interessen? Sei misstrauisch! Du kannst nicht prüfen, ob das wirklich stimmt oder ob jemand nur Vertrauen aufbauen will.</li>
-            <li><strong>4. SICHERE BEWEISE:</strong> Wenn du belästigt wirst, mache Screenshots vom Chat, bevor du das Profil blockierst. Diese Beweise können der Polizei helfen, Täter zu identifizieren.</li>
-            <li><strong>5. VERTRAUE DICH JEMANDEM AN UND MACHE DIR BEWUSST: DICH TRIFFT KEINE SCHULD!</strong> Sprich mit deinen Eltern oder einer Vertrauensperson, wenn dir etwas komisch vorkommt oder du dich bedroht fühlst. Falls du bereits Bilder oder Videos verschickt hast – du bist nicht schuld!</li>
-        </ul>
+        
+        <div class="accordion">
+            <button>1. SAGE NEIN, WENN DU ETWAS NICHT MÖCHTEST:</button>
+            <div class="panel">
+                Du fühlst dich unwohl oder möchtest eine Frage nicht beantworten? Dann sag NEIN! Nur du bestimmst deine Grenzen. Brich unangenehme Gespräche ab und blockiere aufdringliche Kontakte.
+            </div>
+        </div>
+
+        <div class="accordion">
+            <button>2. VERSCHICKE KEINE FOTOS UND VIDEOS:</button>
+            <div class="panel">
+                Sei sparsam mit deinen Bildern und Videos und überprüfe deine Privatsphäre-Einstellungen. Teile keine Medien mit Fremden und überlege dir genau, was von dir im Internet sichtbar sein soll.
+            </div>
+        </div>
+
+        <div class="accordion">
+            <button>3. SEI SKEPTISCH BEI FREMDEN KONTAKTEN:</button>
+            <div class="panel">
+                Dein Chatpartner hat die gleichen Interessen? Sei misstrauisch! Du kannst nicht prüfen, ob das wirklich stimmt oder ob jemand nur Vertrauen aufbauen will.
+            </div>
+        </div>
+
+        <div class="accordion">
+            <button>4. SICHERE BEWEISE:</button>
+            <div class="panel">
+                Wenn du belästigt wirst, mache Screenshots vom Chat, bevor du das Profil blockierst. Diese Beweise können der Polizei helfen, Täter zu identifizieren.
+            </div>
+        </div>
+
+        <div class="accordion">
+            <button>5. VERTRAUE DICH JEMANDEM AN UND MACHE DIR BEWUSST: DICH TRIFFT KEINE SCHULD!</button>
+            <div class="panel">
+                Sprich mit deinen Eltern oder einer Vertrauensperson, wenn dir etwas komisch vorkommt oder du dich bedroht fühlst. Falls du bereits Bilder oder Videos verschickt hast – du bist nicht schuld!
+            </div>
+        </div>
+
+        <p><strong>Hier kannst du eine Beschwerde einreichen:</strong></p>
+        <a class="button" href="https://www.medienanstalt-nrw.de/zum-nachlesen/recht-und-aufsicht/beschwerde.html#cybergrooming" target="_blank">🚔 Jetzt melden!</a>
     </div>
+    
     <footer>
         © 2025 - Dein sicherer Online-Ratgeber
     </footer>
+
+    <script>
+        // JavaScript für die Klappfunktion
+        document.querySelectorAll(".accordion button").forEach(button => {
+            button.addEventListener("click", () => {
+                const panel = button.nextElementSibling;
+                
+                // Falls das Panel offen ist, schließen
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                    button.classList.remove("active");
+                } else {
+                    // Alle anderen Panels schließen
+                    document.querySelectorAll(".panel").forEach(p => p.style.display = "none");
+                    document.querySelectorAll(".accordion button").forEach(b => b.classList.remove("active"));
+
+                    // Dieses Panel öffnen
+                    panel.style.display = "block";
+                    button.classList.add("active");
+                }
+            });
+        });
+    </script>
 </body>
 </html>
