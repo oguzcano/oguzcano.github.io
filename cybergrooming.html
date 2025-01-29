@@ -145,11 +145,18 @@
 
         <p><strong>Hier kannst du eine Beschwerde einreichen:</strong></p>
         <a class="button" href="https://www.medienanstalt-nrw.de/zum-nachlesen/recht-und-aufsicht/beschwerde.html#cybergrooming" target="_blank">🚔 Jetzt melden!</a>
+
+        <button onclick="goBack()" class="back-button">Zurück</button>
     </div>
     
     <footer>
         © 2025 - Dein sicherer Online-Ratgeber
     </footer>
+     <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 
     <script>
         // JavaScript für die Klappfunktion
@@ -173,12 +180,5 @@
             });
         });
     </script>
-    <button onclick="goBack()" class="back-button">Zurück</button>
-
-<script>
-    function goBack() {
-        window.history.back();
-    }
-</script>
 </body>
 </html>
