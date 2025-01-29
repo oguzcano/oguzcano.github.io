@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Raus aus dem Cyber-Grooming</title>
     <style>
+        /* Allgemeines Styling */
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
@@ -17,7 +18,8 @@
             background-color: #ff4c4c;
             color: #fff;
             text-align: center;
-            padding: 1rem 0;
+            padding: 1.5rem 0;
+            animation: fadeIn 1.5s ease-in-out;
         }
         header h1 {
             margin: 0;
@@ -28,21 +30,55 @@
             margin: 2rem auto;
             padding: 1rem;
             background: #fff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
+            opacity: 0;
+            animation: slideUp 1.5s ease-in-out forwards;
         }
         .container h2 {
             font-size: 1.8rem;
             color: #ff4c4c;
-        }
-        .container p {
-            margin: 1rem 0;
+            text-align: center;
+            animation: pulse 1.5s infinite alternate;
         }
         .tips {
-            margin-top: 2rem;
+            list-style: none;
+            padding: 0;
         }
         .tips li {
+            background: #ffecec;
             margin: 1rem 0;
+            padding: 1rem;
+            border-left: 5px solid #ff4c4c;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .tips li:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .tips li i {
+            font-size: 1.5rem;
+            margin-right: 10px;
+            color: #ff4c4c;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 20px;
+            transition: transform 0.2s ease-in-out;
+        }
+        .button:hover {
+            background: #0056b3;
+            transform: scale(1.1);
         }
         footer {
             text-align: center;
@@ -50,23 +86,42 @@
             font-size: 0.9rem;
             color: #666;
         }
+
+        /* Animationen */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulse {
+            from { transform: scale(1); }
+            to { transform: scale(1.05); }
+        }
     </style>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
-        <h1>Mittendrin? Raus aus dem Cyber-Grooming!</h1>
+        <h1>🚨 Mittendrin? Raus aus dem Cyber-Grooming! 🚨</h1>
     </header>
+    
     <div class="container">
-        <h2>So schützt du dich</h2>
+        <h2>🛡 So schützt du dich 🛡</h2>
         <ul class="tips">
-            <li><strong>1. Sicher ist sicher!</strong> Wirst du im Chat immer wieder auf intime Themen angesprochen? Sichere Beweise durch Screenshots der Chatverläufe, um gegen den Täter vorzugehen.</li>
-            <li><strong>2. Und Tschüss!</strong> Blockiere den Chatpartner und beende den Kontakt sofort. Falls du deine Handynummer herausgegeben hast, blockiere den Täter auch auf deinem Handy.</li>
-            <li><strong>3. Petzen erwünscht!</strong> Melde den Chatpartner bei den Betreibern sozialer Netzwerke oder Chatplattformen. So schützt du auch andere vor Cyber-Grooming.</li>
-            <li><strong>4. Zusammen stark sein!</strong> Sprich mit deinen Eltern oder Freunden über deine Erfahrungen. Es muss dir nicht peinlich sein – gemeinsam könnt ihr eine Lösung finden.</li>
-            <li><strong>5. Strafe muss sein!</strong> Geh mit deinen Eltern zur Polizei. Cyber-Grooming ist verboten und Täter müssen zur Rechenschaft gezogen werden. Du brauchst keine Angst zu haben – du bist nicht schuld!</li>
+            <li><i class="fas fa-shield-alt"></i> <strong>1. Sicher ist sicher!</strong> Mach Screenshots, wenn du belästigt wirst. So hast du Beweise!</li>
+            <li><i class="fas fa-ban"></i> <strong>2. Und Tschüss!</strong> Blockiere den Täter sofort in allen Netzwerken!</li>
+            <li><i class="fas fa-exclamation-triangle"></i> <strong>3. Petzen erwünscht!</strong> Melde den Täter an die Betreiber der Plattform!</li>
+            <li><i class="fas fa-users"></i> <strong>4. Zusammen stark sein!</strong> Sprich mit Eltern oder Freunden – du bist nicht allein!</li>
+            <li><i class="fas fa-gavel"></i> <strong>5. Strafe muss sein!</strong> Geh mit deinen Eltern zur Polizei – Cyber-Grooming ist strafbar!</li>
         </ul>
-        <p><strong>Hier kannst du eine Beschwerde einreichen:</strong> <a href="https://www.medienanstalt-nrw.de/zum-nachlesen/recht-und-aufsicht/beschwerde.html#cybergrooming" target="_blank">Medienanstalt NRW</a></p>
+
+        <p><strong>Hier kannst du eine Beschwerde einreichen:</strong></p>
+        <a class="button" href="https://www.medienanstalt-nrw.de/zum-nachlesen/recht-und-aufsicht/beschwerde.html#cybergrooming" target="_blank">🚔 Jetzt melden!</a>
     </div>
+    
     <footer>
         © 2025 - Dein sicherer Online-Ratgeber
     </footer>
