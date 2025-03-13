@@ -65,6 +65,37 @@
         </div>
     </section>
 
+        <!-- Kontakt -->
+    <section id="contact" class="section text-center">
+        <div class="container">
+            <h2>Unverbindliche Anfrage</h2>
+            <p>Kontaktieren Sie uns für ein individuelles Angebot.</p>
+            <form>
+                <div class="row mb-3 g-3">
+                    <div class="col-md-6"><input type="text" class="form-control" placeholder="Vorname"></div>
+                    <div class="col-md-6"><input type="text" class="form-control" placeholder="Nachname"></div>
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Rufnummer">
+                </div>
+                <div class="mb-3">
+                    <input type="email" class="form-control" placeholder="Ihre E-Mail">
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Ihr Anliegen">
+                </div>
+                <div class="mb-3">
+                    <input type="file" class="form-control" accept="image/*" multiple>
+                </div>
+                <div class="mb-3">
+                    <textarea class="form-control" rows="4" placeholder="Ihre Nachricht"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" onclick="showConfirmation(event)">Senden</button>
+                <p id="confirmationMessage" class="mt-3 text-success" style="display: none;">Ihre Nachricht wurde gesendet!</p>
+            </form>
+        </div>
+    </section>
+
     <!-- Unsere Leistungen -->
     <section id="services" class="section text-center">
         <div class="container">
@@ -104,36 +135,17 @@
         </div>
     </section>
 
-    <!-- Kontakt -->
-    <section id="contact" class="section text-center">
+        <!-- Footer -->
+    <footer class="footer">
         <div class="container">
-            <h2>Unverbindliche Anfrage</h2>
-            <p>Kontaktieren Sie uns für ein individuelles Angebot.</p>
-            <form>
-                <div class="row mb-3 g-3">
-                    <div class="col-md-6"><input type="text" class="form-control" placeholder="Vorname"></div>
-                    <div class="col-md-6"><input type="text" class="form-control" placeholder="Nachname"></div>
-                </div>
-                <div class="mb-3">
-                    <input type="text" class="form-control" placeholder="Rufnummer">
-                </div>
-                <div class="mb-3">
-                    <input type="email" class="form-control" placeholder="Ihre E-Mail">
-                </div>
-                <div class="mb-3">
-                    <input type="text" class="form-control" placeholder="Ihr Anliegen">
-                </div>
-                <div class="mb-3">
-                    <input type="file" class="form-control" accept="image/*" multiple>
-                </div>
-                <div class="mb-3">
-                    <textarea class="form-control" rows="4" placeholder="Ihre Nachricht"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary" onclick="showConfirmation(event)">Senden</button>
-                <p id="confirmationMessage" class="mt-3 text-success" style="display: none;">Ihre Nachricht wurde gesendet!</p>
-            </form>
+            <img src="logo.png" alt="Firmenlogo" class="mb-3" width="150">
+            <p>Adresse: Stollenstraße 32, 45966 Gladbeck</p>
+            <p>Öffnungszeiten: Mo. - Fr.: 08:00 - 18:00 Uhr | Sa.: 09:00 - 15:00 Uhr</p>
+            <p><a href="#">Datenschutz</a> | <a href="#">Impressum</a> | <a href="#">Kontakt</a></p>
+            <p>Tel.: 02043 4012929 | E-Mail: info@email.de</p>
+            <p>Folge uns auf <a href="#">Instagram</a></p>
         </div>
-    </section>
+    </footer>
 
     <script>
         function showConfirmation(event) {
