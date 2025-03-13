@@ -14,15 +14,20 @@
         .navbar { background-color: #0056b3 !important; }
         .header-bg { background: url('https://via.placeholder.com/1920x500') center/cover no-repeat; }
         .form-group { margin-bottom: 15px; }
-        .service-img { width: 100%; max-width: 240px; margin-bottom: 15px; }
-        .service-item { padding: 15px; }
+        .service-img { width: 100%; max-width: 300px; margin-bottom: 15px; }
+        .service-item { padding: 20px; }
+        .service-item h4 { margin-top: 10px; margin-bottom: 5px; }
+        .service-item p { margin-bottom: 15px; }
+        @media (max-width: 768px) {
+            .service-item { width: 100%; }
+        }
     </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">Autowerkstatt</a>
+            <a class="navbar-brand" href="#">El-Dorr's KFZ Meisterbetrieb</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -39,7 +44,7 @@
     <!-- Hero Section -->
     <header class="text-center text-white py-5 header-bg">
         <div class="container">
-            <h1>Willkommen bei Ihrer Autowerkstatt</h1>
+            <h1>Willkommen bei El-Dorr's KFZ Meisterbetrieb</h1>
             <p>Qualität & Service für Ihr Fahrzeug</p>
         </div>
     </header>
@@ -64,32 +69,32 @@
         <div class="container">
             <h2>Unsere Leistungen</h2>
             <div class="row">
-                <div class="col-md-4 col-6 service-item">
+                <div class="col-md-4 col-sm-12 service-item">
                     <img src="Reparatur.png" class="service-img" alt="Leistung 1">
                     <h4>Wartung und Reperatur</h4>
                     <p>Wir kümmern uns zuverlässig um die Wartung und Reparatur Ihres Fahrzeugs – für maximale Sicherheit und Langlebigkeit.</p>
                 </div>
-                <div class="col-md-4 col-6 service-item">
+                <div class="col-md-4 col-sm-12 service-item">
                     <img src="Delle.png" class="service-img" alt="Leistung 2">
                     <h4>Unfallinstandsetzung</h4>
                     <p>Wir beheben Schäden jeder Größe professionell und zuverlässig.</p>
                 </div>
-                <div class="col-md-4 col-6 service-item">
+                <div class="col-md-4 col-sm-12 service-item">
                     <img src="Reifenwechsel.png" class="service-img" alt="Leistung 3">
                     <h4>Reifenwechsel</h4>
                     <p>Wir wechseln Ihre Reifen schnell und fachgerecht – für mehr Sicherheit auf der Straße.</p>
                 </div>
-                <div class="col-md-4 col-6 service-item">
+                <div class="col-md-4 col-sm-12 service-item">
                     <img src="Ersatzteile.png" class="service-img" alt="Leistung 4">
                     <h4>Ersatzteile</h4>
                     <p>Wir bieten hochwertige Ersatzteile für eine zuverlässige Reparatur und lange Lebensdauer Ihres Fahrzeugs.</p>
                 </div>
-                <div class="col-md-4 col-6 service-item">
+                <div class="col-md-4 col-sm-12 service-item">
                     <img src="Fahrzeugdiagnose.png" class="service-img" alt="Leistung 5">
                     <h4>Fahrzeugdiagnose</h4>
                     <p>Mit modernster Diagnosetechnik finden wir schnell und präzise Fehler an Ihrem Fahrzeug.</p>
                 </div>
-                <div class="col-md-4 col-6 service-item">
+                <div class="col-md-4 col-sm-12 service-item">
                     <img src="Tuv.png" class="service-img" alt="Leistung 6">
                     <h4>Fahrzeugprüfung</h4>
                     <p>Umfassende Fahrzeugprüfungen – von HU/AU bis zur UVV-Prüfung, alles aus einer Hand</p>
