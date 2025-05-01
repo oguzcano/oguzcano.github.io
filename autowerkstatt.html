@@ -339,7 +339,7 @@
                 <div class="col-12 col-md-4 mb-4">
                     <h5>Adresse</h5>
                     <p>Stollenstraße 32<br>45966 Gladbeck</p>
-                    <a href="#" class="text-white text-decoration-none">Datenschutz</a>
+                    <a href="impressum.html#datenschutz" class="text-white text-decoration-none">Datenschutz</a>
                 </div>
 
                 <!-- Öffnungszeiten -->
@@ -406,5 +406,68 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Cookie Consent + Google Analytics (DSGVO-konform) -->
+    <script>
+        // Consent-Konfiguration
+        window.cookieconsent = {
+            cookie: {
+                name: "cc_cookie",
+            },
+            preferences: {
+                necessary: true,
+                analytics: false,
+            },
+            onAccept: function (cookies) {
+                if (cookies.analytics) {
+                    loadGoogleAnalytics(); // GA nur nach Zustimmung laden
+                }
+            },
+            guiOptions: {
+                consentModal: {
+                    layout: "box",
+                    position: "bottom right",
+                    transition: "slide"
+                },
+                preferencesModal: {
+                    layout: "box",
+                    transition: "slide"
+                }
+            },
+            categories: {
+                necessary: {
+                    enabled: true,
+                    readOnly: true,
+                    title: "Unbedingt erforderlich",
+                    description: "Diese Cookies sind nötig, damit die Website funktioniert."
+                },
+                analytics: {
+                    enabled: false,
+                    title: "Statistik & Analyse",
+                    description: "Diese Cookies helfen uns, das Nutzerverhalten besser zu verstehen (z. B. Google Analytics)."
+                }
+            }
+        };
+    </script>
+
+    <!-- CookieConsent Library -->
+    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+
+    <!-- Google Analytics Ladefunktion -->
+    <script>
+        function loadGoogleAnalytics() {
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true }); //TODO mit echtem GA4-Mess-ID ersetzen
+
+            var script = document.createElement('script');
+            script.src = "https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"; // TODO mit echtem GA4-Mess-ID ersetzen
+            script.async = true;
+            document.head.appendChild(script);
+        }
+    </script>
+
 </body>
 </html>
